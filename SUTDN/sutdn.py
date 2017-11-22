@@ -116,7 +116,7 @@ class SUTDN:
 		logging.info(u'用户组：' + userGroup)
 		logging.info(accountInfo)
 
-		file_object = open('userIndex.txt', 'w')
+		file_object = open('../userIndex.txt', 'w')
 		file_object.write(userIndex)
 		file_object.close()
 		self.fresh()
@@ -138,7 +138,7 @@ class SUTDN:
 		"""
 		刷新在线信息函数
 		"""
-		f = open('userIndex.txt', 'r')
+		f = open('../userIndex.txt', 'r')
 		userIndex = f.read()
 		fresh_url = self.FRESH_URL_0 + userIndex
 		r = self.session.get(fresh_url)
