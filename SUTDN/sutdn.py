@@ -67,6 +67,9 @@ class SUTDN:
 		r = self.session.get(location, data=data, allow_redirects=False).text
 		if 'alert' in r:
 			logging.info(u'登陆成功')
+		elif u'时长' in r:
+			logging.info(u'欠费')
+			return 0
 		elif u'您的账户已欠费' in r:
 			logging.info(u'欠费')
 			return 0
