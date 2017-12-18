@@ -3,6 +3,7 @@ import re
 import logging
 
 import requests
+logging.getLogger('requests').setLevel(logging.WARNING)
 
 logging.basicConfig(level=logging.INFO)
 

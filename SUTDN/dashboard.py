@@ -4,6 +4,7 @@ import json
 import logging
 
 import requests
+logging.getLogger('requests').setLevel(logging.WARNING)
 
 session = requests.session()
 logging.basicConfig(level=logging.INFO)
