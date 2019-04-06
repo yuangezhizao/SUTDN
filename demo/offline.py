@@ -1,4 +1,4 @@
 from SUTDN import *
 
 a = SUTDN('', '')
-a.offline()
+a.logout()
