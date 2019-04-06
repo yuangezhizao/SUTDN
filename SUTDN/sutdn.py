@@ -64,6 +64,7 @@ class SUTDN:
             except Exception as e:
                 logging.info('登录成功')
                 r = self.session.get(self.BASE_URL + self.CHECK_AUTH_STATE)
+                # 必须带有登录态才能获取 userIndex（因此 self.fresh 只能使用存储的 userIndex
                 userIndex = re.findall("userIndex='(.*?)' ", r.text, re.S)[0]
                 IsOnline = re.findall('<IsOnline>(.*?)</IsOnline>', r.text, re.S)[0]
                 isAutoLogin = re.findall('<isAutoLogin>(.*?)</isAutoLogin>', r.text, re.S)[0]
